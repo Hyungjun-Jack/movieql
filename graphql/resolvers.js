@@ -1,7 +1,13 @@
+const Hyungjun = {
+  name: "Hyungjun Kim",
+  age: 44,
+  gender: "male"
+};
+
 const resolvers = {
-    Query:{
-        name:() => "Hyungjun Kim"
-    }
+  Query: {
+    person: () => Hyungjun
+  }
 };
 
 export default resolvers;
