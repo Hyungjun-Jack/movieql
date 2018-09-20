@@ -7,11 +7,13 @@
   "author": "Hyungjun Kim",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "^6.24.1",
     "global": "^4.3.2",
     "graphql-yoga": "^1.16.2",
+    "node-fetch": "^2.2.0",
     "nodemon": "^1.18.4"
   },
   "scripts": {
