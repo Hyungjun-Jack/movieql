@@ -72,7 +72,46 @@ export let movies = [
   }
 ];
 
-export const getMovies = () => movies;
+//export const getMovies = () => movies;
+export const getMovies = async (limit, rating) => {
+  const {
+    data: {
+      data: {movies}
+    }
+  } = await axios(LIST_MOVIES_URL, {
+    params: {
+      limit,
+      minimum_rating: rating
+    }
+  });
+  return movies;
+}
+
+export const getMovie = async id => {
+  const {
+    data: {
+      data: {movie}
+    }
+  } = await axios(MOVIE_DETAILS_URL, {
+    params: {
+      movie_id: id
+    }
+  });
+  return movie;
+}
+
+export const getSuggestions = async id => {
+  const {
+    data: {
+      data: {movies}
+    }
+  } = await axios(MOVIE_SUGGESTIONS_URL, {
+    params: {
+      movie_id: id
+    }
+  });
+  return movies;
+}
 
 export const getById = id => {
   const filteredPerson = people.filter(person => person.id === id);
